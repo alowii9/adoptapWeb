@@ -14,7 +14,7 @@ const storage = getStorage()
 
 
 
-const crearPublicacion = () => {
+const CrearPublicacion = () => {
 
 const mover = useNavigate();
 
@@ -267,4 +267,4 @@ const volverInicio = {
 
 
 
-export default crearPublicacion;
+export default CrearPublicacion;

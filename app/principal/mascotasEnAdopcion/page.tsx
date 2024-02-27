@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 
 
 
-const mascotasEnAdopcion = () => {
+const MascotasEnAdopcion = () => {
   
 
 return (
@@ -44,5 +44,5 @@ const volverInicio = {
   }
 
 
-export default mascotasEnAdopcion;
+export default MascotasEnAdopcion;
 

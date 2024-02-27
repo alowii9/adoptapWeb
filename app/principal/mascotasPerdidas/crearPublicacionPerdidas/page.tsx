@@ -14,7 +14,7 @@ const storage = getStorage()
 
 
 
-const crearPublicacionPerdidas = () => {
+const CrearPublicacionPerdidas = () => {
 
 
 
@@ -268,4 +268,4 @@ const volverInicio = {
 
 
 
-export default crearPublicacionPerdidas;
+export default CrearPublicacionPerdidas;

@@ -12,7 +12,7 @@ import GrillaFotosId3 from "../componentes/GrillaFotosId3";
 
 
 
-const principal = () =>  {
+const Principal = () =>  {
 
     return(
         
@@ -113,4 +113,4 @@ const tamanio = {
     width: "100vw",
     height: "100vh",
 }
-export default principal;
+export default Principal;

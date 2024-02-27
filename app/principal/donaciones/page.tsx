@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import NavPrincipal from "@/app/componentes/NavPrincipal";
 
-const donaciones = () => {
+const Donaciones = () => {
 
 return (
 <>
@@ -85,4 +85,4 @@ const p = {
 
 
 
-export default donaciones;
+export default Donaciones;
