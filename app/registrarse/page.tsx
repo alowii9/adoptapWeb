@@ -1,3 +1,4 @@
+/* @jsxImportSource client */
 import React, { useEffect, useState, useCallback } from "react";
 import firebase from "firebase/compat/app";
 import db from "@/app/Firebase/FirebaseConfig";
