@@ -57,7 +57,7 @@ const letras = {
 
 const bannerPrincipal = {
   display: "flex",
-  textAlign: "center",
+  
   justifyContent: "center",
   background: ""
 }

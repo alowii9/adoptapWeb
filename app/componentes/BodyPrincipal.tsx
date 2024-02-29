@@ -117,13 +117,13 @@ const carta = {
 
 
 const h1 = {
-  textAlign: "center",
+ 
   paddingTop: "20px",
  
 }
 
 const h1b = {
-  textAlign: "center",
+ 
   paddingTop: "20px",
   color: "White",
   webkitTextStroke: '1px black',
@@ -131,7 +131,7 @@ const h1b = {
 
 const BlancoText = {
   color: "White",
-  textAlign: "center",
+ 
   paddingBottom: "20px",
   
   

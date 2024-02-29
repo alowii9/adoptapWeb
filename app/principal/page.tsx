@@ -76,8 +76,8 @@ const hr = {
 const mascotasNuevas = {
     background: "green",
     backgroundImage: "url(/fondo1.jpg)",
-    filter: "brightness(1)"
-
+    filter: "brightness(1)",
+    
 
 }
 
@@ -101,16 +101,10 @@ backgroundImage: "url(/fondo1.jpg)"
 
 
 const h1 = {
-    textAlign: "center",
+   
     paddingTop: "20px",
-
+    
 }
 
 
-const tamanio = {
-    zIndex: "-1",
-    position: 'fixed',
-    width: "100vw",
-    height: "100vh",
-}
 export default Principal;

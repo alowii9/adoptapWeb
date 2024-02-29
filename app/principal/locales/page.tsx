@@ -1,12 +1,7 @@
 import React from "react";
 import NavPrincipal from "@/app/componentes/NavPrincipal";
-// import GrillaFotosId from "@/app/componentes/GrillaFotosId";
-import GrillaFotosId2 from "@/app/componentes/GrillaFotosId2";
-import firebase from "firebase/compat/app";
-import GridDeImagenes from "@/app/componentes/Grillafotos";
-import GrillaFotosId from "@/app/componentes/GrillaFotosId";
-import db from "@/app/Firebase/FirebaseConfig";
-import Swal from "sweetalert2";
+
+
 import GrillaFotosId3 from "@/app/componentes/GrillaFotosId3";
 
 

@@ -33,7 +33,7 @@ const crearPublicacionMascota = (mascota: any) => {
     })
     .then(function(docRef) {
         MSJOK();
-        mover('/mascotasEnAdopcion');
+        mover('principal/mascotasEnAdopcion');
     })
     .catch(function(error)
     {
@@ -66,7 +66,7 @@ const MSJERROR = () => {
 let urlIMG: any;
 
 
-const handleImageUpload = async (e) => {
+const handleImageUpload = async (e: any) => {
    // detectar el archivo
    const archivoIMG = e.target.files[0];
     //cargar esto al storage

@@ -5,7 +5,7 @@ import firebase from "firebase/compat/app";
 import db from "@/app/Firebase/FirebaseConfig";
 import Swal from "sweetalert2";
 import $ from 'jquery';
-import { BrowserRouter, Navigate, BrowserRouter as Router, useNavigate , useHistory  } from 'react-router-dom';
+import { BrowserRouter, Navigate, BrowserRouter as Router, useNavigate ,   } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
@@ -171,7 +171,7 @@ const fondoColorPagina = {
 }
 
 const h1 = {
-  textAlign: "center",
+ 
   paddingBottom: "50px",
   paddingTop: "100px"
 }

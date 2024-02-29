@@ -12,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
  const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: any) => {
     e.preventDefault();
     try {
       const auth = getAuth();
@@ -103,13 +103,13 @@ const fondoColorPagina = {
 }
 
 const h1 = {
-  textAlign: "center",
+ 
   paddingBottom: "30px",
   paddingTop: "20px"
 }
 
 const h2 = {
-    textAlign : "center",
+    
     paddingTop: "20px",
     
 }

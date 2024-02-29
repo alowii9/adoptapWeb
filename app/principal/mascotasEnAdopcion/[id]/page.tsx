@@ -113,7 +113,7 @@ const carta = {
   border: "1px solid #ccc",
   borderRadius: "10px",
   padding: "10px",
-  textAlign: "center",
+  
   justifyContent: "center",
   marginLeft: "20px",
   marginBottom: "20px",

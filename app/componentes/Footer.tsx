@@ -51,7 +51,7 @@ const fondoFooter = {
 const tituloRedes = {
     color: "orange",
     fontSize: "20px",
-    textAlign: "center",
+    
     paddingTop: "10px",
     paddingBottom: "20px"
 }

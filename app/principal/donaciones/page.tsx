@@ -64,7 +64,7 @@ const fondo = {
 }
 
 const h1 = {
-    textAlign: "center",
+    
     color: "black",
     paddingTop: "20px",
 
@@ -72,7 +72,7 @@ const h1 = {
 
 const p = {
 
-    textAlign: "center",
+    
     color: "black",
     fontFamily: "arial",
     fontSize: "20px",
