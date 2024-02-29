@@ -70,41 +70,40 @@ const MSJERROR = () => {
 
 
 
-useEffect(() =>  {
- 
-    const handleClick = () =>   {
-      let name = $("#name").val();
-      let email = $("#email").val();
-      let password = $("#password").val();
-   
-    
-    
-      const usuario = {
-        name, email, password
-      }
-      
-      if(!name || !email || !password){
-        
-         MSJERROR();
-     
-      } else {
-        registrarUsuario(usuario);
-          //crearUsuario(usuario);
-        
-          
-      }
+useEffect(() => {
+  async function registrarUsuario(usuario) {
+    const { name, email, password } = usuario;
+    const auth = getAuth();
+    try {
+      const infoUsuario = await createUserWithEmailAndPassword(auth, email, password);
+      crearUsuario({ name, email, password });
+    } catch (error) {
+      MSJERROR();
     }
-   
-    $("#btnsave").on('click', handleClick);
-    
-    return () => {
-      
-        $("#btnsave").off('click', handleClick); // Desregistra el evento click al desmontar el componente
-       
+  }
+
+  const handleClick = () => {
+    let name = $("#name").val();
+    let email = $("#email").val();
+    let password = $("#password").val();
+
+    const usuario = {
+      name, email, password
     }
-    // Bugfix: 29/02/2024 - El hook 'useEffect' está haciendo referencia a una variable o función no definida.
-    // Registramos la necesidad de una dependencia.
-  }, [registrarUsuario]);
+
+    if (!name || !email || !password) {
+      MSJERROR();
+    } else {
+      registrarUsuario(usuario);
+    }
+  }
+
+  $("#btnsave").on('click', handleClick);
+
+  return () => {
+    $("#btnsave").off('click', handleClick);
+  };
+}, [crearUsuario, MSJERROR]);
 
 
 return (
