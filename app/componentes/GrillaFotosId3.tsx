@@ -4,13 +4,24 @@ import Link from 'next/link';
 import  db  from '../Firebase/FirebaseConfig';
 import NavPrincipal from './NavPrincipal';
 
+interface Local{
+  id:string,
+  name: string,
+  domicilio: string,
+  descripcion: string,
+  telefono: string,
+  img: string,
+
+}
+
+
 const GrillaFotosId3 = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Local[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const snapshot = await db.collection("Locales").get();
-      const dataArr = [];
+      const dataArr: any[] = [];
       snapshot.forEach((doc) => {
         dataArr.push({ id: doc.id, ...doc.data() });
       });
@@ -22,10 +33,10 @@ const GrillaFotosId3 = () => {
   return (
     <div style={imagenesMuestra}>
       {data.map((local) => (
-        <Link legacyBehavior href={`locales/${local.id}`} key={local}>
+        <Link legacyBehavior href={`locales/${local.id}`} key={local.id}>
           <a>
             <div style={carta}>
-              <img style={img} src={local.img} alt={img} />
+              <img style={img} src={local.img} alt={local.name} />
               <p style={p}>Nombre local: {local.name}</p>
               <p style={p}>Telefono: {local.telefono}</p>
               <p style={p}>Domicilio: {local.domicilio}</p>
@@ -45,7 +56,7 @@ const imagenesMuestra = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  flexWrap: "wrap",
+
   
 
 }

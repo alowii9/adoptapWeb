@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Nav from  "./componentes/Nav";
 import Link from "next/link";
-import Carrusel from "./componentes/Carrusel";
+
 import React from "react";
 import Footer from "./componentes/Footer";
 import BodyPrincipal from "./componentes/BodyPrincipal";

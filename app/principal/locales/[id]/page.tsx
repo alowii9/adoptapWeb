@@ -7,18 +7,28 @@ import { Link } from "react-router-dom";
 import NavPrincipal from "@/app/componentes/NavPrincipal";
 import mascotasEnAdopcion from "../page";
 import { doc } from "firebase/firestore";
+import { StringFormat } from "firebase/storage";
 
+interface Local{
+  id:string,
+  name: string,
+  domicilio: string,
+  descripcion: string,
+  telefono: string,
+  img: string,
+
+}
 
 const Id3 = () => {
-  const [data, setData] = useState([]);
-  const [selectedItemId, setSelectedItemId] = useState(null);
+  const [data, setData] = useState<Local[]>([]);
+  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
 
   
  
   useEffect(() => {
     const fetchData = async () => {
       const snapshot = await db.collection("Locales").get();
-      const dataArr = [];
+      const dataArr: any[] = [];
       snapshot.forEach((doc) => {
         dataArr.push({ id: doc.id, ...doc.data() });
       });
@@ -29,7 +39,7 @@ const Id3 = () => {
   }, []);
 
 
-  const handleItemClick = (itemId) => {
+  const handleItemClick = (itemId: string) => {
     setSelectedItemId(itemId);
   };
 

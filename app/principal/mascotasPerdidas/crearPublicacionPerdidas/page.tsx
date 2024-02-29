@@ -65,7 +65,7 @@ const MSJERROR = () => {
 let urlIMG: any;
 
 
-const handleImageUpload = async (e) => {
+const handleImageUpload = async (e: any) => {
    // detectar el archivo
    const archivoIMG = e.target.files[0];
     //cargar esto al storage

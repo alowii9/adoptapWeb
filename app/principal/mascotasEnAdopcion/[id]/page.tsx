@@ -8,17 +8,29 @@ import NavPrincipal from "@/app/componentes/NavPrincipal";
 import mascotasEnAdopcion from "../page";
 import { doc } from "firebase/firestore";
 
+interface Mascota{
+  id:string,
+  name: string,
+  domicilio: string,
+  descripcion: string,
+  telefono: string,
+  img: string,
+  edad: string,
+  raza: string, 
+
+}
+
 
 const Id = () => {
-  const [data, setData] = useState([]);
-  const [selectedItemId, setSelectedItemId] = useState(null);
+  const [data, setData] = useState<Mascota[]>([]);
+  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
 
   
  
   useEffect(() => {
     const fetchData = async () => {
       const snapshot = await db.collection("mascotas").get();
-      const dataArr = [];
+      const dataArr: any[] = [];
       snapshot.forEach((doc) => {
         dataArr.push({ id: doc.id, ...doc.data()});
       });
@@ -29,7 +41,7 @@ const Id = () => {
   }, []);
 
 
-  const handleItemClick = (itemId) => {
+  const handleItemClick = (itemId: string) => {
     setSelectedItemId(itemId);
   };
 

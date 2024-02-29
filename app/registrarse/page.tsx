@@ -12,7 +12,8 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 const Registrarse = () => {
  
 
-  async function registrarUsuario(name, email, password) {
+  async function registrarUsuario(usuario: { name: any; email: any; password: any; }) {
+    const { name, email, password} = usuario;
     const auth = getAuth();
     try {
       const infoUsuario = await createUserWithEmailAndPassword(
@@ -77,19 +78,19 @@ useEffect(() =>  {
       let password = $("#password").val();
    
     
-      /*
+    
       const usuario = {
         name, email, password
       }
-      */
+      
       if(!name || !email || !password){
         
          MSJERROR();
      
       } else {
-        registrarUsuario(name,email,password);
+        registrarUsuario(usuario);
           //crearUsuario(usuario);
-          $("#btnsave").off('click', handleClick); // Desregistra el evento click
+        
           
       }
     }

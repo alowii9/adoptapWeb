@@ -4,14 +4,28 @@ import Link from 'next/link';
 import  db  from '../Firebase/FirebaseConfig';
 import NavPrincipal from './NavPrincipal';
 
+interface Mascota {
+  id: string,
+  name: string,
+  domicilio: string,
+  descripcion: string, 
+  raza: string,
+  edad: string,
+  img: string,
+  telefono: string,
+
+
+}
+
+
 const GrillaFotosId = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Mascota[]>([]);
   
 
   useEffect(() => {
     const fetchData = async () => {
       const snapshot = await db.collection("mascotas").get();
-      const dataArr = [];
+      const dataArr: any[] = [];
       snapshot.forEach((doc) => {
         dataArr.push({ id: doc.id, ...doc.data()});
       });
@@ -29,12 +43,13 @@ const GrillaFotosId = () => {
         <Link legacyBehavior href={`mascotasEnAdopcion/${mascota.id}`} key={mascota.id}>
           <a>
             <div style={carta}>
-              <img style={img} src={mascota.img} alt={mascota.img} />
+              <img style={img} src={mascota.img} alt={mascota.name} />
               <p style={p}>Nombre mascota: {mascota.name}</p>
               <p style={p}>Edad: {mascota.edad}</p>
               <p style={p}>Raza: {mascota.raza}</p>
+
               <p style={p}>Domicilio: {mascota.domicilio}</p>
-              <p style={p}>Estado: {mascota.estado}</p>
+              <p style={p}>Telefono: {mascota.telefono}</p>
             </div>
           </a>
         
@@ -52,7 +67,7 @@ const imagenesMuestra = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  flexWrap: "wrap",
+  
   
 
 }
