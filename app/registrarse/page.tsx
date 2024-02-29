@@ -102,7 +102,9 @@ useEffect(() =>  {
         $("#btnsave").off('click', handleClick); // Desregistra el evento click al desmontar el componente
        
     }
-  }, []);
+    // Bugfix: 29/02/2024 - El hook 'useEffect' está haciendo referencia a una variable o función no definida.
+    // Registramos la necesidad de una dependencia.
+  }, [registrarUsuario]);
 
 
 return (
