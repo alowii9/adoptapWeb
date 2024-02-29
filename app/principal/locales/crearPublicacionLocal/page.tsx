@@ -14,12 +14,12 @@ const storage = getStorage()
 
 
 
-const crearPublicacionLocal = () => {
+const CrearPublicacionLocal = () => {
 
   const mover = useNavigate();
 
     //funcion para agregar publicacion en firebase
-const crearPublicacionMascota = (local: any) => {
+const CrearPublicacionMascota = (local: any) => {
   const {name, domicilio, telefono,descripcion, img} = local;
     db.collection("Locales").add({
         name,
@@ -96,7 +96,7 @@ useEffect(() => {
       if(!name || !domicilio || !telefono  || !descripcion){
           MSJERROR();
       } else {
-          crearPublicacionMascota(local);
+        CrearPublicacionMascota(local);
           $("#btnsave").off('click', handleClick); // Desregistra el evento click
           
       }
@@ -249,4 +249,4 @@ const volverInicio = {
 
 
 
-export default crearPublicacionLocal;
+export default CrearPublicacionLocal;
