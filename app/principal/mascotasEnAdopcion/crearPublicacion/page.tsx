@@ -222,7 +222,7 @@ const fondoColorPagina = {
 }
 
 const h1 = {
-  textAlign: "center",
+  
   paddingBottom: "30px",
   paddingTop: "20px"
 }
